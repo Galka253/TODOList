@@ -1,38 +1,170 @@
 .App {
   text-align: center;
+  background: center/contain no-repeat
+    linear-gradient(135deg, red, orange, yellow, green, blue, violet);
+  color: red;
+  font: italic bold 1.2rem cursive;
+  text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black;
+  letter-spacing: 3px;
+  margin-top: 50px;
 }
+ul {
+  margin: 0 auto;
+  padding: 50px;
+  list-style: none;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  counter-reset: list;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+li {
+  /* Use CSS grid for spacing between marker and list item contents */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  grid-template-columns: min-content 500px;
+  column-gap: 10px;
+
+  /* Increment counter */
+  counter-increment: list;
+}
+
+li::before {
+  /* Set content to an empty string */
+  content: counter(list);
+
+  /* Add a background image for the marker */
+
+  /* Add animation */
+  animation: 3s linear 1s infinite spin;
+
+  /* Create the box and center its contents */
+  width: 20px;
+  height: 20px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+
+  /* Additional text styles */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* CSS */
+button {
+  background-image: linear-gradient(#42a1ec, #0070c9);
+  border: 1px solid #0077cc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  direction: ltr;
+
+  font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  line-height: 1.47059;
+  min-width: 10px;
+  overflow: visible;
+  padding: 4px 5px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:disabled {
+  cursor: default;
+  opacity: 0.3;
+}
+
+button:hover {
+  background-image: linear-gradient(#51a9ee, #147bcd);
+  border-color: #1482d0;
+  text-decoration: none;
+}
+
+button:active {
+  background-image: linear-gradient(#3d94d9, #0067b9);
+  border-color: #006dbc;
+  outline: none;
+}
+
+button:focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+  outline: none;
+}
+
+/* CSS */
+.button-91 {
+  color: #fff;
+  padding: 15px 25px;
+  background-color: #d23852;
+  background-image: radial-gradient(
+      93% 87% at 87% 89%,
+      rgba(0, 0, 0, 0.23) 0%,
+      transparent 86.18%
+    ),
+    radial-gradient(
+      66% 66% at 26% 20%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0) 69.79%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25),
+    inset 0px 3px 9px rgba(255, 255, 255, 0.3),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0px -8px 36px rgba(0, 0, 0, 0.3),
+    inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  cursor: pointer;
+}
+.button-92 {
+  color: #fff;
+  padding: 15px 25px;
+  background-color: #38d2d2;
+  background-image: radial-gradient(
+      93% 87% at 87% 89%,
+      rgba(0, 0, 0, 0.23) 0%,
+      transparent 86.18%
+    ),
+    radial-gradient(
+      66% 66% at 26% 20%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0) 69.79%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25),
+    inset 0px 3px 9px rgba(255, 255, 255, 0.3),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0px -8px 36px rgba(0, 0, 0, 0.3),
+    inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  cursor: pointer;
+}
+.List {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+input {
+  font-size: 20px;
+  margin: 100px 0 10px 0;
 }
